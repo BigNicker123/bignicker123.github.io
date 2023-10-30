@@ -9,7 +9,8 @@ As a user, I want to be able to see the charging station's operating hours and p
 As a user, I want the app to provide directions to the selected charging station, either through an integrated navigation system or by launching a third-party navigation app. <br>
 
 ### Actors
-TODO: List and describe the actors/users for this product.
+Actors that appear in the following use-cases are as follows
+Driver - An electric car user
 
 ### Use Cases
 TODO: Describe each use case (at least one per team member).
