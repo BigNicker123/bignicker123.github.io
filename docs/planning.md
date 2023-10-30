@@ -12,7 +12,9 @@ This will app will benefit people in bristol that use electric cars as they will
 There are already some apps that provide this service, for example the Tesla Supercharger Network however this app is exclusve to Tesla drivers.
 
 ### Expected Risks
-TODO: What are the main risks of this project?
+Market Competition: There are already established electric car charger finder apps and services. New entrants may struggle to compete with existing platforms.
+Security and Privacy: Handling user data and location information comes with security and privacy risks.
+User Experience and Design: User-friendliness and a visually appealing design are critical. If the app is not intuitive and easy to use, users may abandon it in favor of competitors.
 
 ## Project Scope
 TODO: Scope of the System of Interest. Include a bullet list of things from your context diagram that are in scope.
