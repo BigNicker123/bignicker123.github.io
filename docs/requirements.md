@@ -30,7 +30,7 @@ TODO: Describe each use case (at least one per team member).
 
 TODO: Your Use-Case diagram should include all use-cases.
 
-Use-case Diagram(docs/Images/UseCase Diagram1.png)
+![Use-case Diagram](docs/Images/UseCase Diagram1.png)
 
 ## Software Requirements Specification
 ### Functional requirements
