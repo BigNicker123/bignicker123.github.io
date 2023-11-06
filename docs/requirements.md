@@ -25,15 +25,15 @@ Actors that appear in the following use-cases are as follows:
 | **Non-functional** |  |
 | **Issues** |  |
 
-| UC2 | TODO: USE-CASE NAME | 
+| UC2 | Find type of charger | 
 | -------------------------------------- | ------------------- |
-| **Description** | TODO: Goal to be achieved by use case and sources for requirement |
+| **Description** | To allow the driver to filter the type of charger,(e.g., Level 2, DC Fast Charger) |
 | **Actors** | Driver |
-| **Assumptions** | TODO: Pre/post-conditions if any</td></tr>
+| **Assumptions** | Permission has been given to use location</td></tr>
 | **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
-| **Variations** | TODO: OPTIONAL - Any variations in the steps of a use case |
-| **Non-functional** | TODO: OPTIONAL - List of non-functional requirements that the use case must meet. |
-| **Issues** | TODO: OPTIONAL - List of issues that remain to be resolved |
+| **Variations** | None |
+| **Non-functional** |  |
+| **Issues** |  |
 
 | UC3 | TODO: USE-CASE NAME | 
 | -------------------------------------- | ------------------- |
