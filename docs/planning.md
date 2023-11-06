@@ -29,5 +29,5 @@ While existing solutions, like the Tesla Supercharger Network, serve a select au
 * Regulatory and compliance issues related to charging station
 * Hardware infrastructure for charging stations
 
-![Context Diagram](images/context.png)
+![Context Diagram](Images/Context-diagram.png)
 
