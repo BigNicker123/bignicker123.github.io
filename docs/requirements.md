@@ -15,11 +15,11 @@ Actors that appear in the following use-cases are as follows:
 
 ### Use Cases
 
-| UC1 | TODO: USE-CASE NAME | 
+| UC1 | Find nearest charger | 
 | -------------------------------------- | ------------------- |
-| **Description** | TODO: Goal to be achieved by use case and sources for requirement |
+| **Description** | Show the charger and driver on the map with the driver at the centre |
 | **Actors** | Driver |
-| **Assumptions** | TODO: Pre/post-conditions if any</td></tr>
+| **Assumptions** | None
 | **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
 | **Variations** | TODO: OPTIONAL - Any variations in the steps of a use case |
 | **Non-functional** | TODO: OPTIONAL - List of non-functional requirements that the use case must meet. |
