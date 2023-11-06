@@ -12,12 +12,12 @@ The envisioned web app is set to revolutionise the electric car charging experie
 While existing solutions, like the Tesla Supercharger Network, serve a select audience, our project's inclusive approach caters to all electric vehicle users in Bristol, irrespective of the car's make and model.
 
 ### Expected Risks
-Market Competition: There are already established electric car charger finder apps and services. New entrants may struggle to compete with existing platforms.
-Security and Privacy: Handling user data and location information comes with security and privacy risks.
-User Experience and Design: User-friendliness and a visually appealing design are critical. If the app is not intuitive and easy to use, users may abandon it in favor of competitors.
+* Market Competition: There are already established electric car charger finder apps and services. New entrants may struggle to compete with existing platforms.
+* Security and Privacy: Handling user data and location information comes with security and privacy risks.
+* User Experience and Design: User-friendliness and a visually appealing design are critical. If the app is not intuitive and easy to use, users may abandon it in favor of competitors.
 
 ## Project Scope
-TODO: Scope of the System of Interest. Include a bullet list of things from your context diagram that are in scope.
+* Geolocation
 
 ![Insert your Context Diagram Here](images/context.png)
 
