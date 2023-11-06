@@ -30,7 +30,7 @@ Actors that appear in the following use-cases are as follows:
 | **Description** | To allow the driver to filter the type of charger,(e.g., Level 2, DC Fast Charger) |
 | **Actors** | Driver |
 | **Assumptions** | Permission has been given to use location</td></tr>
-| **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
+| **Steps** | <ol><li>Show a drop down menu</li><li>Allow user to filter options from menu</li><li>Show filtered results with a marker on the map for each charger</li></ol> |
 | **Variations** | None |
 | **Non-functional** |  |
 | **Issues** |  |
