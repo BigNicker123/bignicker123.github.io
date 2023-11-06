@@ -3,14 +3,14 @@
 ## User Needs
 
 ### User stories
-As an electric car user I want to find car chargers so I can charge my car.
-As a user, I want to filter charging stations based on the type of charger (e.g., Level 2, DC Fast Charger) so that I can choose the one that is compatible with my electric car. <br>
-As a user, I want to be able to see the charging station's operating hours and pricing information, if available, so that I can plan my charging stops efficiently and budget for it. <br>
-As a user, I want the app to provide directions to the selected charging station, either through an integrated navigation system or by launching a third-party navigation app. <br>
+* As an electric car user I want to find car chargers so I can charge my car.
+* As a user, I want to filter charging stations based on the type of charger (e.g., Level 2, DC Fast Charger) so that I can choose the one that is compatible with my electric car. <br>
+* As a user, I want to be able to see the charging station's operating hours and pricing information, if available, so that I can plan my charging stops efficiently and budget for it. <br>
+* As a user, I want the app to provide directions to the selected charging station, either through an integrated navigation system or by launching a third-party navigation app. <br>
 
 ### Actors
 Actors that appear in the following use-cases are as follows
-Driver - An electric car user
+* Driver - An electric car user
 
 ### Use Cases
 TODO: Describe each use case (at least one per team member).
