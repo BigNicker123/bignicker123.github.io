@@ -23,6 +23,7 @@ While existing solutions, like the Tesla Supercharger Network, serve a select au
 * User Registration
 * Filter options based on charger type, power output, tariff, and charging speed
 * Interactive maps for navigation
+* Open data bristol platform
 
 ### Out of Scope
 * Regulatory and compliance issues related to charging station
