@@ -3,13 +3,13 @@
 ## Business Case
 
 ### Problem statement
-This Project will produce a Web App that will allow a user to locate the closest electric car charging point. The User will be able to select the type of charger they require based on the power output, tariff and speed of charge.
+Our project aims to create a web application designed to empower users in Bristol with electric vehicles. This innovative app will enable users to seamlessly pinpoint the nearest electric car charging stations while offering the flexibility to choose a charger based on their specific requirements, including power output, tariff, and charging speed.
 
 ### Business benefits
-This will app will benefit people in bristol that use electric cars as they will be able to search for car chargers that work with their car quickly and effectively.
+The envisioned web app is set to revolutionise the electric car charging experience for Bristol's eco-conscious community. By providing a swift and efficient means to discover compatible charging points, it will not only streamline the electric vehicle charging process but also contribute to reducing the carbon footprint in the region.
 
 ### Options Considered
-There are already some apps that provide this service, for example the Tesla Supercharger Network however this app is exclusve to Tesla drivers.
+While existing solutions, like the Tesla Supercharger Network, serve a select audience, our project's inclusive approach caters to all electric vehicle users in Bristol, irrespective of the car's make and model.
 
 ### Expected Risks
 Market Competition: There are already established electric car charger finder apps and services. New entrants may struggle to compete with existing platforms.
