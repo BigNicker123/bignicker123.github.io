@@ -49,7 +49,7 @@ Actors that appear in the following use-cases are as follows:
 ![Use-Case Diagram](Images/UseCase-Diagram1.png)
 
 ### Robustness Diagram
-![Use-Case Diagram](Images/UseCase-Diagram1.png)
+![Robustness Diagram](Images/RobustnessDiagram.png)
 
 ## Software Requirements Specification
 ### Functional requirements
