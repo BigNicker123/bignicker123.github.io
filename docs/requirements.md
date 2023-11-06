@@ -45,7 +45,7 @@ Actors that appear in the following use-cases are as follows:
 | **Non-functional** |  |
 | **Issues** |  |
 
-
+### Use-case Diagram
 ![Use-Case Diagram](Images/UseCase-Diagram1.png)
 
 ## Software Requirements Specification
