@@ -20,4 +20,4 @@ User Experience and Design: User-friendliness and a visually appealing design ar
 TODO: Scope of the System of Interest. Include a bullet list of things from your context diagram that are in scope.
 
 ![Insert your Context Diagram Here](images/context.png)
-https://opendata.bristol.gov.uk/datasets/bcc::electric-vehicle-charging-points-2/explore?location=51.652907%2C-2.302821%2C9.71&showTable=true
+
