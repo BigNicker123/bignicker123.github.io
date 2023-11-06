@@ -48,6 +48,9 @@ Actors that appear in the following use-cases are as follows:
 ### Use-case Diagram
 ![Use-Case Diagram](Images/UseCase-Diagram1.png)
 
+### Robustness Diagram
+![Use-Case Diagram](Images/UseCase-Diagram1.png)
+
 ## Software Requirements Specification
 ### Functional requirements
 TODO: create a list of functional requirements. 
