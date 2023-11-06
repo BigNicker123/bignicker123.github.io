@@ -20,10 +20,10 @@ Actors that appear in the following use-cases are as follows:
 | **Description** | Show the charger and driver on the map with the driver at the centre |
 | **Actors** | Driver |
 | **Assumptions** | None
-| **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
-| **Variations** | TODO: OPTIONAL - Any variations in the steps of a use case |
-| **Non-functional** | TODO: OPTIONAL - List of non-functional requirements that the use case must meet. |
-| **Issues** | TODO: OPTIONAL - List of issues that remain to be resolved |
+| **Steps** | <ol><li>Select the map</li><li>Give permission to use location</li><li>Get charge coordinates for database</li><li>Centre map on user location</li><li>Add a marker on the map for each charger</li></ol> |
+| **Variations** | None |
+| **Non-functional** |  |
+| **Issues** |  |
 
 | UC2 | TODO: USE-CASE NAME | 
 | -------------------------------------- | ------------------- |
