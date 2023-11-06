@@ -9,18 +9,36 @@
 * As a user, I want the app to provide directions to the selected charging station, either through an integrated navigation system or by launching a third-party navigation app. <br>
 
 ### Actors
-Actors that appear in the following use-cases are as follows
+Actors that appear in the following use-cases are as follows:
+
 * Driver - An electric car user
 
 ### Use Cases
-TODO: Describe each use case (at least one per team member).
-    Give each use case a unique ID, e.g. UC1, UC2, ...
-    Summarise these using the use-case template below.
 
-| TODO: USE-CASE ID e.g. UC1, UC2, ... | TODO: USE-CASE NAME | 
+| UC1 | TODO: USE-CASE NAME | 
 | -------------------------------------- | ------------------- |
 | **Description** | TODO: Goal to be achieved by use case and sources for requirement |
-| **Actors** | TODO: List of actors involved in use case |
+| **Actors** | Driver |
+| **Assumptions** | TODO: Pre/post-conditions if any</td></tr>
+| **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
+| **Variations** | TODO: OPTIONAL - Any variations in the steps of a use case |
+| **Non-functional** | TODO: OPTIONAL - List of non-functional requirements that the use case must meet. |
+| **Issues** | TODO: OPTIONAL - List of issues that remain to be resolved |
+
+| UC2 | TODO: USE-CASE NAME | 
+| -------------------------------------- | ------------------- |
+| **Description** | TODO: Goal to be achieved by use case and sources for requirement |
+| **Actors** | Driver |
+| **Assumptions** | TODO: Pre/post-conditions if any</td></tr>
+| **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
+| **Variations** | TODO: OPTIONAL - Any variations in the steps of a use case |
+| **Non-functional** | TODO: OPTIONAL - List of non-functional requirements that the use case must meet. |
+| **Issues** | TODO: OPTIONAL - List of issues that remain to be resolved |
+
+| UC3 | TODO: USE-CASE NAME | 
+| -------------------------------------- | ------------------- |
+| **Description** | TODO: Goal to be achieved by use case and sources for requirement |
+| **Actors** | Driver |
 | **Assumptions** | TODO: Pre/post-conditions if any</td></tr>
 | **Steps** | TODO: Interactions between actors and system necessary to achieve goal |
 | **Variations** | TODO: OPTIONAL - Any variations in the steps of a use case |
