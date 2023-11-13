@@ -72,3 +72,4 @@ NFR1.* Are derived from UC1.
 **NFR1.4** The source code should be accessable from GitHub (Maintainability). <br>
 **NFR1.5** The app should return formatted data to the user within 5 seconds (Performance Efficiency). <br>
 **NFR1.6** The app should work on different browsers e.g. Chrome and Safari. And the app should work on different types of devices e.g. Mobile and Desktop (Compatability). <br>
+**NFR1.7** The data used by the app should be up to date; Less than one year old (Functional Suitability). <br>
