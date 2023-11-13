@@ -53,10 +53,9 @@ Actors that appear in the following use-cases are as follows:
 
 ## Software Requirements Specification
 ### Functional requirements
-TODO: create a list of functional requirements. 
-    e.g. "The system shall ..."
-    Give each functional requirement a unique ID. e.g. FR1, FR2, ...
-    Indicate which UC the requirement comes from.
+* FR1 - The system shall allow the user to find the nearest charger using UC1
+* FR2 - The system shall allow the user to find and filter chargers based on their type using UC2
+* FR3 - The system shall provide the user with directions to the charger using UC3
 
 
 ### Non-Functional Requirements
