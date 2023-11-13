@@ -53,12 +53,12 @@ Actors that appear in the following use-cases are as follows:
 
 ## Software Requirements Specification
 ### Functional requirements
-* FR1 - The system should allow the user to find the nearest charger using UC1
-* FR2 - The system should allow the user to find and filter chargers based on their type using UC2
-* FR3 - The system should provide the user with directions to the charger using UC3
-* FR4 - The system must use the users Geolocation to get their cooedinates
-* FR5 - 
-
+* FR1 - The system should allow the user to find the nearest charger using UC1.
+* FR1.1 - The system should add markers for each charger on the map.
+* FR2 - The system should allow the user to find and filter chargers based on their type using UC2.
+* FR3 - The system should provide the user with directions to the charger using UC3.
+* FR4.1 - The system should get permission to access user location via geolocation object.
+* FR4.2 - The system must query the database to get the charger coordinates.
 
 ### Non-Functional Requirements
 TODO: Consider one or more [quality attributes](https://en.wikipedia.org/wiki/ISO/IEC_9126) to suggest a small number of non-functional requirements.
