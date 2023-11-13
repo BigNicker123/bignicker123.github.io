@@ -53,18 +53,19 @@ Actors that appear in the following use-cases are as follows:
 
 ## Software Requirements Specification
 ### Functional requirements
-**FR1.1** The system should allow the user to find the nearest charger using UC1. <br>
+**FR1.1** The system should allow the user to find the nearest charger. <br>
 **FR1.2** The system should add markers for each charger on the map.<br>
+**FR1.3** The system should get permission to access user location via geolocation object.<br>
+**FR1.4** The system must query the database to get the charger coordinates.<br>
 **FR2.1** The system should allow the user to find and filter chargers based on their type using UC2.<br>
 **FR3.1** The system should provide the user with directions to the charger using UC3.<br>
-**FR4.1** The system should get permission to access user location via geolocation object.<br>
-**FR4.2** The system must query the database to get the charger coordinates.<br>
+
 
 ### Non-Functional Requirements
 
-**NFR1** The app should work on mobile and desktop (Portability). <br>
-**NFR2** The app should display up to 5 of the closest chargers at a time (Usability). <br>
-**NFR3** There is no security required (Security). <br>
-**NFR4** The source code should be accessable from GitHub (Maintainability). <br>
-**NFR5** The app should return formatted data to the user within 5 seconds (Performance Efficiency). <br>
-**NFR6** The app should work on different browsers (Compatability). <br>
+**NFR1.1** The app should work on mobile (Portability). <br>
+**NFR1.2** The app should display up to 5 of the closest chargers at a time (Usability). <br>
+**NFR1.3** There is no security required (Security). <br>
+**NFR1.4** The source code should be accessable from GitHub (Maintainability). <br>
+**NFR1.5** The app should return formatted data to the user within 5 seconds (Performance Efficiency). <br>
+**NFR1.6** The app should work on different browsers e.g. Chrome and Safari. And the app should work on different types of devices e.g. Mobile and Desktop (Compatability). <br>
