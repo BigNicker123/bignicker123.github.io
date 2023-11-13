@@ -66,4 +66,5 @@ Actors that appear in the following use-cases are as follows:
 **NFR2** The app should display up to 5 of the closest chargers at a time (Usability). <br>
 **NFR3** There is no security required (Security). <br>
 **NFR4** The source code should be accessable from GitHub (Maintainability). <br>
-**NFR5** The app should return formatted data to the user within 5 seconds (Performance Efficiency) <br>
+**NFR5** The app should return formatted data to the user within 5 seconds (Performance Efficiency). <br>
+**NFR6** The app should work on different browsers (Compatability). <br>
