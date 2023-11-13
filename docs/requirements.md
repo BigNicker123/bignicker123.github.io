@@ -53,6 +53,8 @@ Actors that appear in the following use-cases are as follows:
 
 ## Software Requirements Specification
 ### Functional requirements
+FR1.* Are derived from UC1.
+
 **FR1.1** The system should allow the user to find the nearest charger. <br>
 **FR1.2** The system should add markers for each charger on the map.<br>
 **FR1.3** The system should get permission to access user location via geolocation object.<br>
@@ -62,6 +64,7 @@ Actors that appear in the following use-cases are as follows:
 
 
 ### Non-Functional Requirements
+NFR1.* Are derived from UC1.
 
 **NFR1.1** The app should work on mobile (Portability). <br>
 **NFR1.2** The app should display up to 5 of the closest chargers at a time (Usability). <br>
