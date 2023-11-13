@@ -63,3 +63,6 @@ TODO: Consider one or more [quality attributes](https://en.wikipedia.org/wiki/IS
 Give each non-functional requirement a unique ID. e.g. NFR1, NFR2, ...
 
 Indicate which UC the requirement comes from.
+
+* NFR1 - The app should work on mobile and desktop (Portability)
+* NFR2 - The app should display up to 5 of the closest chargers at a time (Usability)
