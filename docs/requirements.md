@@ -53,10 +53,10 @@ Actors that appear in the following use-cases are as follows:
 
 ## Software Requirements Specification
 ### Functional requirements
-**FR1** The system should allow the user to find the nearest charger using UC1. <br>
-**FR1.1** The system should add markers for each charger on the map.<br>
-**FR2** The system should allow the user to find and filter chargers based on their type using UC2.<br>
-**FR3** The system should provide the user with directions to the charger using UC3.<br>
+**FR1.1** The system should allow the user to find the nearest charger using UC1. <br>
+**FR1.2** The system should add markers for each charger on the map.<br>
+**FR2.1** The system should allow the user to find and filter chargers based on their type using UC2.<br>
+**FR3.1** The system should provide the user with directions to the charger using UC3.<br>
 **FR4.1** The system should get permission to access user location via geolocation object.<br>
 **FR4.2** The system must query the database to get the charger coordinates.<br>
 
