@@ -73,3 +73,4 @@ NFR1.* Are derived from UC1.
 **NFR2.1** The app should return formatted data to the user within 5 seconds (Performance Efficiency). <br>
 **NFR2.2** The app should work on different browsers e.g. Chrome and Safari. And the app should work on different types of devices e.g. Mobile and Desktop (Compatability). <br>
 **NFR3.1** The data used by the app should be up to date; Less than one year old (Functional Suitability). <br>
+**NFR3.2** The map should default view to bristol if no location data is available (Reliability). <br>
