@@ -1,7 +1,13 @@
 # Design
 
 ## User Interface design
-TODO: Specify and develop a user interface mockup using a wireframe.
+### Wireframe for Use Case 1
 
-![Insert your wireframe/wireflow here](images/wireframe.png)
-TODO: repeat as necessary
+![Wireframe](Images/wireframeUC1.png)
+
+
+### Wireframe for Use Case 2
+
+
+### Wireframe for Use Case 3
+
