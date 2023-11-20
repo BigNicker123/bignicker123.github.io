@@ -5,7 +5,7 @@
 ## User Interface design
 ### Wireframe for Use Case 1
 Find closest charger
-![Wireframe](Images/wireframeUC1.png)
+![Wireframe](Images/wireflow3.png)
 
 
 ### Wireframe for Use Case 2
