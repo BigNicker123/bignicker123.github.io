@@ -25,7 +25,7 @@ Actors that appear in the following use-cases are as follows:
 | **Non-functional** |  |
 | **Issues** |  |
 
-| UC2 | Find type of charger | 
+| UC2 | Filter type of charger | 
 | -------------------------------------- | ------------------- |
 | **Description** | To allow the driver to filter the type of charger,(e.g., Level 2, DC Fast Charger) |
 | **Actors** | Driver |
