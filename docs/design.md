@@ -1,6 +1,6 @@
 # Design
 
-![wireframe](https://whimsical.com/car-charger-finder-NUFyVrBWPRM2LNXFvTtVC4)
+[wireframe](https://whimsical.com/car-charger-finder-NUFyVrBWPRM2LNXFvTtVC4)
 
 ## User Interface design
 ### Wireframe for Use Case 1
