@@ -7,6 +7,7 @@ TODO: Describe the system implemented (Describe the dataset. Are there any known
 TODO: Provide an outline of the project folder structure and the role of each file within it.
 provide a table listing the number of jslint warnings/reports for each module.
 
+```
 └── 📁bignicker123.github.io-main
     └── 📁App
         └── FilterCharger.html
@@ -28,7 +29,7 @@ provide a table listing the number of jslint warnings/reports for each module.
         └── requirements.md
         └── testing.md
     └── readme.md
-
+```
 ## Software Architecture
 TODO: Describe the major components of your architecture. Are any particular architectural styles being used?
 
