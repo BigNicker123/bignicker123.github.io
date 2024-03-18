@@ -6,9 +6,9 @@ TODO: Describe the system implemented (Describe the dataset. Are there any known
 ## Project Structure
 TODO: Provide an outline of the project folder structure and the role of each file within it.
 provide a table listing the number of jslint warnings/reports for each module.
-└── 📁bignicker123.github.io-main
-    └── 📁App
-        └── FilterCharger.html
+└── 📁bignicker123.github.io-main<br>
+    └── 📁App<br>
+        └── FilterCharger.html<br>
         └── FindNearestCharger.html
         └── Main.html
         └── ProvideDirections.html
