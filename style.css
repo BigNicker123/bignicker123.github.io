@@ -1,0 +1,43 @@
+header {font-size: xx-large; font-family: sans-serif;}
+#search {font-size: small; font-family: sans-serif; float:right;}
+.grey{background-color: rgb(235, 235, 235);}
+.padded {padding: 10px 10px;}
+
+.grid-container{display: grid; grid-template-areas:
+'ph ph ph ph'
+'nv nv nv nv'
+'ln cn cn cn'
+'ln cn cn cn'
+}
+
+header {grid-area: ph;}
+
+nav { grid-area: nv;}
+
+side { grid-area: ln;}
+
+main { grid-area: cn;}
+
+h1 { text-align: center;}
+
+h6 { text-align: center;}
+
+#login {font-size: small; font-family: sans-serif; float:left;}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#Map {width: 800; height: 600;}
+
+.centered-buttons {text-align: center;}
+
+.centered-buttons button {margin: 5px;}
