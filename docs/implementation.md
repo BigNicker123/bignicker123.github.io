@@ -2,6 +2,7 @@
 
 ## Introduction
 TODO: Describe the system implemented (Describe the dataset. Are there any known issues? Describe any configuration data).
+This dataset is very small with only 26 rows. This dataset provides valuable insights into the electric vehicle charging infrastructure in Bristol
 
 ## Project Structure
 TODO: Provide an outline of the project folder structure and the role of each file within it.
