@@ -1,1 +1,46 @@
-
+<html>
+    <head>
+        <title> Car Charger Finder </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="grey padded">
+                <span id="login">
+                    <button>
+                        Login / Sign up
+                        <i class="fa fa-user"></i>
+                    </button>
+                </span>
+                <span id="search">
+                    <input  placeholder="Search...">
+                    <i class="fa fa-search"></i>
+                </span>
+                <h1> <b>Car Charger Finder</b> </h1>
+            </header>
+            <nav>
+                <hr>
+                <div class="centered-buttons">
+                    <button> Find Closest Charger </button>
+                    <button> Filter Chargers </button>
+                    <button> Provide Directions </button>
+                </div>
+                <hr>
+            </nav>
+            <div class="centered-buttons">
+                <side>
+                    <h6>Showing Results</h6>
+                    <iframe id = "Results" src="https://arcg.is/1m8H9a" width="300" height="600" style="border:0;"></iframe>
+                </side>
+            </div>
+            <div class="centered-buttons">
+                <main>
+                    <h1>Bristol City Centre</h1>
+                    <iframe id = "Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79534.04050332322!2d-2.673117531935706!3d51.46846007604484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871836681b3d861%3A0x8ee4b22e4b9ad71f!2sBristol!5e0!3m2!1sen!2suk!4v1701697540299!5m2!1sen!2suk" width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
