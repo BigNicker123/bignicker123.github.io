@@ -1,47 +1,217 @@
-<html>
-    <!-- By Nick LeMasonry -->
-    <head>
-        <title> Car Charger Finder </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="grid-container">
-            <header class="grey padded">
-                <span id="login">
-                    <button>
-                        Login / Sign up
-                        <i class="fa fa-user"></i>
-                    </button>
-                </span>
-                <span id="search">
-                    <input  placeholder="Search...">
-                    <i class="fa fa-search"></i>
-                </span>
-                <h1> <b>Car Charger Finder</b> </h1>
-            </header>
-            <nav>
-                <hr>
-                <div class="centered-buttons">
-                    <button> Find Closest Charger </button>
-                    <button> Filter Chargers </button>
-                    <button> Provide Directions </button>
-                </div>
-                <hr>
-            </nav>
-            <div class="centered-buttons">
-                <side>
-                    <h6>Showing Results</h6>
-                    <iframe id = "Results" src="https://arcg.is/1m8H9a" width="300" height="600" style="border:0;"></iframe>
-                </side>
-            </div>
-            <div class="centered-buttons">
-                <main>
-                    <h1>Bristol City Centre</h1>
-                    <iframe id = "Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79534.04050332322!2d-2.673117531935706!3d51.46846007604484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871836681b3d861%3A0x8ee4b22e4b9ad71f!2sBristol!5e0!3m2!1sen!2suk!4v1701697540299!5m2!1sen!2suk" width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </main>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Charger Finder</title>
+    <!-- Link to the updated CSS file -->
+    <link rel="stylesheet" href="FilterChargerStyle.css">
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header Section -->
+        <header class="header">
+            <span id="login"><button>Login / Sign up</button></span>
+            <h1>Car Charger Finder</h1>
+            <span id="search"><input type="text" placeholder="Search..."></span>
+        </header>
+
+        <!-- Navigation Section -->
+        <nav class="nav">
+            <!-- Navigation Links -->
+            <a href="FindNearestCharger.html">Find Nearest Charger</a>
+            <a href="FilterCharger.html">Filter Chargers</a>
+            <a href="ProvideDirections.html">Provide Directions</a>
+        </nav>
+
+        <!-- Filter Section -->
+        <div class="filter">
+            <h2>Filters</h2>
+            <!-- Type Filter -->
+            <label for="charger-type">Type:</label>
+            <select id="charger-type">
+                <option value="">All</option>
+                <option value="Standard">Standard</option>
+                <option value="Rapid">Rapid</option>
+                <option value="Fast">Fast</option>
+            </select>
+
+            <!-- Socket Type Filter -->
+            <label for="socket-type">Socket Type:</label>
+            <select id="socket-type">
+                <option value="">All</option>
+                <option value="CHAdeMO">CHAdeMO</option>
+                <option value="62196 Type 2">62196 Type 2</option>
+            </select>
+
+            <!-- Distance Filter -->
+            <label for="distance">Distance (miles):</label>
+            <input type="number" id="distance" min="0">
+
+            <!-- Removed Apply Filters button -->
         </div>
-    </body>
+
+        <!-- Charger Information Section -->
+        <div class="ln" id="charger-info">
+            <!-- Result Title -->
+            <h2 id="result-title"></h2>
+            <!-- Charger Information Table -->
+            <table class="charger-table">
+                <thead><tr><th>Name</th><th>Location</th><th>Type</th><th>Socket Type</th><th>Distance (miles)</th></tr></thead>
+                <tbody class="charger-table-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Map Section -->
+        <div class="cn" id="map"></div>
+    </div>
+
+    <!-- Mapbox Script -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+    <script>
+        // Global variables
+        let map;
+        let userLocation = null;
+        let chargerData = []; // Store original charger data
+
+        // Function to fetch charger data from API
+        function fetchChargerData() {
+            // Fetch charger data from API
+            // Assuming charger data is fetched and stored in chargerData variable
+            chargerData = [
+                { 
+                    attributes: {
+                        site_name: "Site 1",
+                        postcode: "12345",
+                        charger_type: "Standard",
+                        socket_type: "CHAdeMO",
+                        location_1_X: 50.1234,
+                        location_1_Y: -1.5678
+                    }
+                },
+                // More charger data...
+            ];
+            // Display charger data
+            displayChargerData(chargerData);
+        }
+
+        // Function to get user's geolocation
+        function getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        userLocation = position.coords;
+                        fetchChargerData();
+                        addUserMarker(userLocation.latitude, userLocation.longitude);
+                        map.setCenter([userLocation.longitude, userLocation.latitude]);
+                    },
+                    error => console.error('Error getting user location:', error)
+                );
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        }
+
+        // Function to add a marker for user's location
+        function addUserMarker(lat, lon) {
+            new mapboxgl.Marker({ color: "blue" })
+                .setLngLat([lon, lat])
+                .setPopup(new mapboxgl.Popup().setHTML("You"))
+                .addTo(map);
+        }
+
+        // Function to display charger data on the map and in the table
+        function displayChargerData(chargers) {
+            const chargerInfoContainer = document.getElementById("charger-info");
+            const chargerTableBody = chargerInfoContainer.querySelector(".charger-table-body");
+            const resultTitle = chargerInfoContainer.querySelector("#result-title");
+            resultTitle.textContent = `Showing ${chargers.length} results`;
+
+            // Clear previous data
+            chargerTableBody.innerHTML = "";
+            map.getSource('chargers').setData({
+                type: 'FeatureCollection',
+                features: chargers.map(charger => ({
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [charger.attributes.location_1_X, charger.attributes.location_1_Y]
+                    },
+                    properties: {
+                        name: charger.attributes.site_name,
+                        location: charger.attributes.postcode,
+                        type: charger.attributes.charger_type,
+                        socketType: charger.attributes.socket_type,
+                        distance: getDistance(userLocation.latitude, userLocation.longitude, charger.attributes.location_1_Y, charger.attributes.location_1_X)
+                    }
+                }))
+            });
+
+            // Populate table
+            chargers.forEach(charger => {
+                const { site_name, postcode, charger_type, socket_type } = charger.attributes;
+                const chargerTableRow = document.createElement("tr");
+                chargerTableRow.innerHTML = `
+                    <td>${site_name}</td>
+                    <td>${postcode}</td>
+                    <td>${charger_type}</td>
+                    <td>${socket_type}</td>
+                    <td>${charger.distance.toFixed(2)}</td>
+                `;
+                chargerTableBody.appendChild(chargerTableRow);
+            });
+        }
+
+        // Function to calculate distance between two coordinates using Haversine formula
+        function getDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = deg2rad(lat2 - lat1);
+            const dLon = deg2rad(lon2 - lon1);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
+
+        // Function to convert degrees to radians
+        function deg2rad(deg) {
+            return deg * (Math.PI / 180);
+        }
+
+        // Call getUserLocation when the page loads
+        window.onload = getUserLocation;
+
+        // Initialize Mapbox
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYmlnbmlja2VyIiwiYSI6ImNsc3NzcTFtNjBld3cycXBnNWZqbGQ0aXAifQ.1wf_L1NCQ2en-cXYyLAdDQ';
+        map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-2.587910, 51.454514],
+            zoom: 11
+        });
+
+        // Add charger data source to the map
+        map.on('load', function() {
+            map.addSource('chargers', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: []
+                }
+            });
+
+            // Add charger layer to the map
+            map.addLayer({
+                id: 'chargers',
+                type: 'symbol',
+                source: 'chargers',
+                layout: {
+                    'icon-image': 'car-15',
+                    'icon-allow-overlap': true
+                }
+            });
+        });
+    </script>
+</body>
 </html>
