@@ -1,43 +1,112 @@
-header {font-size: xx-large; font-family: sans-serif;}
-#search {font-size: small; font-family: sans-serif; float:right;}
-.grey{background-color: rgb(235, 235, 235);}
-.padded {padding: 10px 10px;}
-
-.grid-container{display: grid; grid-template-areas:
-'ph ph ph ph'
-'nv nv nv nv'
-'ln cn cn cn'
-'ln cn cn cn'
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-header {grid-area: ph;}
-
-nav { grid-area: nv;}
-
-side { grid-area: ln;}
-
-main { grid-area: cn;}
-
-h1 { text-align: center;}
-
-h6 { text-align: center;}
-
-#login {font-size: small; font-family: sans-serif; float:left;}
-
-button {
-    border: none;
-    padding: 10px 20px;
+/* Header Styles */
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: transparent;
 }
 
-#Map {width: 800; height: 600;}
+header h1 {
+    margin: 0 auto; /* Center the title */
+}
 
-.centered-buttons {text-align: center;}
+#login {
+    float: left;
+}
 
-.centered-buttons button {margin: 5px;}
+#search {
+    float: right;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content Styles */
+.main {
+    padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Additional Styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust column sizes as needed */
+    grid-template-areas:
+        'header header'
+        'nav nav'
+        'ln cn';
+}
+
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.ln {
+    grid-area: ln;
+}
+
+/* Result Title Styles */
+#result-title {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Charger Table Styles */
+.charger-table {
+    width: 100%; /* Set width to 100% */
+    border-collapse: collapse;
+}
+
+.charger-table th, .charger-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.charger-table th {
+    background-color: #f2f2f2;
+}
+
+/* Charger Grid Styles */
+.charger-grid {
+    overflow-x: auto;
+}
+
+/* Map Styles */
+#map {
+    height: 80vh; /* Adjust the height as needed */
+    width: 100%; /* Fill the available space */
+}
