@@ -74,17 +74,24 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             mapboxgl.accessToken = 'pk.eyJ1IjoiYmlnbmlja2VyIiwiYSI6ImNsc3NzcTFtNjBld3cycXBnNWZqbGQ0aXAifQ.1wf_L1NCQ2en-cXYyLAdDQ';
-            map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [-2.587910, 51.454514],
-                zoom: 11
-            });
+            let map = null; // Define map variable globally
 
             let userLocation = null;
             let chargerData = null;
 
             function applyFilters() {
+                // Clear the existing map
+                if (map) {
+                    map.remove();
+                }
+
+                map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [-2.587910, 51.454514],
+                    zoom: 11
+                });
+
                 const chargerTypeFilter = document.getElementById('charger-type').value;
                 const socketTypeFilter = document.getElementById('socket-type').value;
                 const distanceFilter = parseFloat(document.getElementById('distance').value) || Infinity;
@@ -113,12 +120,14 @@
                 displayChargers(filteredChargers);
             }
 
-            function convertToMiles(kilometers) {
-                return kilometers * 0.621371;
+            function clearChargerMarkers() {
+                // Remove all charger markers from the map
+                const markers = document.querySelectorAll(".marker");
+                markers.forEach(marker => marker.remove());
             }
 
-
             function displayChargers(chargers) {
+                clearChargerMarkers();
                 const chargerInfoContainer = document.getElementById("charger-info");
                 const chargerTableBody = chargerInfoContainer.querySelector(".charger-table-body");
                 const resultTitle = chargerInfoContainer.querySelector("#result-title");
@@ -143,6 +152,14 @@
                 });
             }
 
+            function addChargerMarker(lat, lon, siteName, postcode) {
+                const location = `${siteName}<br>${postcode}`;
+                const marker = new mapboxgl.Marker({ color: "red" })
+                    .setLngLat([lon, lat])
+                    .setPopup(new mapboxgl.Popup().setHTML(location))
+                    .addTo(map);
+                marker.getElement().classList.add("marker"); // Add marker class for later removal
+            }
 
             document.getElementById("apply-filters").addEventListener("click", applyFilters);
 
@@ -166,7 +183,6 @@
                             userLocation = position.coords;
                             fetchChargerData();
                             addUserMarker(userLocation.latitude, userLocation.longitude);
-                            map.setCenter([userLocation.longitude, userLocation.latitude]);
                         },
                         error => console.error('Error getting user location:', error)
                     );
@@ -182,14 +198,6 @@
                     .addTo(map);
             }
 
-            function addChargerMarker(lat, lon, siteName, postcode) {
-                const location = `${siteName}<br>${postcode}`;
-                new mapboxgl.Marker({ color: "red" })
-                    .setLngLat([lon, lat])
-                    .setPopup(new mapboxgl.Popup().setHTML(location))
-                    .addTo(map);
-            }
-
             function getDistance(lat1, lon1, lat2, lon2) {
                 const R = 6371;
                 const dLat = deg2rad(lat2 - lat1);
@@ -201,6 +209,10 @@
 
             function deg2rad(deg) {
                 return deg * (Math.PI / 180);
+            }
+
+            function convertToMiles(kilometers) {
+                return kilometers * 0.621371;
             }
 
             getUserLocation();
