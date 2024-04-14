@@ -35,7 +35,7 @@ provide a table listing the number of jslint warnings/reports for each module.
     └── readme.md
 ```
 ## Software Architecture
-TODO: Describe the major components of your architecture. Are any particular architectural styles being used?
+The architecture of this web application revolves around a client-server model, where the client-side interface, built with HTML, CSS, and JavaScript, interacts with the server-side Bristol Open Data API to fetch information about electric vehicle charging points. Utilising the Mapbox API, the application integrates interactive maps into the interface. JavaScript functions handle geolocation retrieval from the browser, enabling the user's location to be used for fetching nearby charging points and centring the map view. Upon receiving data from the API, further JavaScript functions process and sort the information, displaying relevant details such as charger name, location, type, socket type, and distance from the user. This architecture embodies a modular approach, with distinct components managing frontend rendering, data fetching, geolocation handling, data processing, and dynamic content updates.
 
 ![Insert your component Diagram here](images/component.png)
 
