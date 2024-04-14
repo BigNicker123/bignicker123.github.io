@@ -55,3 +55,9 @@ The architecture of this web application revolves around a client-server model, 
 ### UML Diagram
 ![UML Diagram](Images/UMLForUseCase1.png)
 
+## Issues and Solutions
+
+This table shows the issues and solutions that occured during the implementation phase for this web app
+
+
+
