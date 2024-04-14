@@ -11,17 +11,19 @@ The dataset, obtained from the Bristol Open Data API, offers information on elec
 Configuration data includes the API endpoint URL for charger data retrieval and the Mapbox access token for map rendering.
 
 ## Project Structure
-TODO: Provide an outline of the project folder structure and the role of each file within it.
-provide a table listing the number of jslint warnings/reports for each module.
+In the "App" directory of the project, we have several files dedicated to facilitating users in finding electric vehicle charging stations conveniently. "FilterCharger.html" enables users to filter charging stations based on their preferences, while its corresponding stylesheet "FilterChargerStyle.css" ensures a visually appealing interface. Similarly, "FindNearestCharger.html" assists users in locating the nearest charging stations, with its associated stylesheet "FindNearestChargerStyle.css" providing the necessary visual design. These files collectively form the user interface components of the application, streamlining the process of accessing electric vehicle charging infrastructure. Additionally, "Index.html" serves as a landing page, providing users with an entry point to the application.
 
 ```
-└── 📁bignicker123.github.io-main
+└── 📁bignicker123.github.io
     └── 📁App
+        └── Charging.jpeg
         └── FilterCharger.html
+        └── FilterChargerStyle.css
         └── FindNearestCharger.html
-        └── Main.html
+        └── FindNearestChargerStyle.css
+        └── Index.html
         └── ProvideDirections.html
-        └── style.css
+        └── ProvideDirectionsStyle.css
     └── 📁docs
         └── 📁Images
             └── Context-diagram.png
