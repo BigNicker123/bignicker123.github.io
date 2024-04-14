@@ -42,8 +42,9 @@ In the "App" directory of the project, we have several files dedicated to facili
 ## Software Architecture
 
 The architecture of this web application revolves around a client-server model, where the client-side interface, built with HTML, CSS, and JavaScript, interacts with the server-side Bristol Open Data API to fetch information about electric vehicle charging points. Utilising the Mapbox API, the application integrates interactive maps into the interface. JavaScript functions handle geolocation retrieval from the browser, enabling the user's location to be used for fetching nearby charging points and centring the map view. Upon receiving data from the API, further JavaScript functions process and sort the information, displaying relevant details such as charger name, location, type, socket type, and distance from the user. This architecture embodies a modular approach, with distinct components managing frontend rendering, data fetching, geolocation handling, data processing, and dynamic content updates.
-TODO: Component diagram
-![Insert your component Diagram here](images/component.png)
+
+### Component Diagram
+![Component Diagram](Images/ComponentDiagram.png)
 
 ## Bristol Open Data API
 
@@ -52,5 +53,5 @@ TODO: Component diagram
 `FilterCharger.html` sends two requests to the Bristol Open Data API. Firstly, in the `fetchChargerData()` function, it retrieves charging point data based on the user's geolocation. Then, within `applyFilters()`, it filters the chargers based on user-defined criteria and displays the nearest ones on the map and in the table. These queries ensure that users receive accurate and relevant information about nearby charging stations.
 
 ### UML Diagram
-![UML - Find Nearest Charger](Images/UMLForUseCase1.png)
+![UML Diagram](Images/UMLForUseCase1.png)
 
