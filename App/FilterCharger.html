@@ -50,7 +50,8 @@
             <label for="distance">Distance (miles):</label>
             <input type="number" id="distance" min="0">
 
-            <!-- Removed Apply Filters button -->
+            <!-- Apply Filters Button -->
+            <button id="apply-filters">Apply Filters</button>
         </div>
 
         <!-- Charger Information Section -->
@@ -74,27 +75,16 @@
         // Global variables
         let map;
         let userLocation = null;
-        let chargerData = []; // Store original charger data
 
         // Function to fetch charger data from API
         function fetchChargerData() {
-            // Fetch charger data from API
-            // Assuming charger data is fetched and stored in chargerData variable
-            chargerData = [
-                { 
-                    attributes: {
-                        site_name: "Site 1",
-                        postcode: "12345",
-                        charger_type: "Standard",
-                        socket_type: "CHAdeMO",
-                        location_1_X: 50.1234,
-                        location_1_Y: -1.5678
-                    }
-                },
-                // More charger data...
-            ];
-            // Display charger data
-            displayChargerData(chargerData);
+            if (!userLocation) return;
+            const { latitude: userLat, longitude: userLon } = userLocation;
+            const url = `https://services2.arcgis.com/a4vR8lmmksFixzmB/arcgis/rest/services/Electric_Vehicle_Charging_Points/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json&lat=${userLat}&lon=${userLon}`;
+            fetch(url)
+            .then(response => response.json())
+            .then(sortChargerDataByDistance)
+            .catch(error => console.error('Error fetching charger data:', error));
         }
 
         // Function to get user's geolocation
@@ -122,35 +112,29 @@
                 .addTo(map);
         }
 
-        // Function to display charger data on the map and in the table
-        function displayChargerData(chargers) {
+        // Function to sort charger data by distance from user's location
+        function sortChargerDataByDistance(data) {
+            if (!userLocation) return;
+            const userLat = userLocation.latitude;
+            const userLon = userLocation.longitude;
+
+            const chargersWithDistances = data.features.map(charger => {
+                const { attributes: { location_1_Y: chargerLat, location_1_X: chargerLon } } = charger;
+                const distance = getDistance(userLat, userLon, chargerLat, chargerLon);
+                return { charger, distance, lat: chargerLat, lon: chargerLon };
+            });
+
+            chargersWithDistances.sort((a, b) => a.distance - b.distance);
+
+            const furthestDistance = chargersWithDistances[chargersWithDistances.length - 1].distance;
+
             const chargerInfoContainer = document.getElementById("charger-info");
             const chargerTableBody = chargerInfoContainer.querySelector(".charger-table-body");
             const resultTitle = chargerInfoContainer.querySelector("#result-title");
-            resultTitle.textContent = `Showing ${chargers.length} results`;
-
-            // Clear previous data
+            resultTitle.textContent = `Showing ${chargersWithDistances.length} results in ${convertToMiles(furthestDistance).toFixed(2)} miles`;
             chargerTableBody.innerHTML = "";
-            map.getSource('chargers').setData({
-                type: 'FeatureCollection',
-                features: chargers.map(charger => ({
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [charger.attributes.location_1_X, charger.attributes.location_1_Y]
-                    },
-                    properties: {
-                        name: charger.attributes.site_name,
-                        location: charger.attributes.postcode,
-                        type: charger.attributes.charger_type,
-                        socketType: charger.attributes.socket_type,
-                        distance: getDistance(userLocation.latitude, userLocation.longitude, charger.attributes.location_1_Y, charger.attributes.location_1_X)
-                    }
-                }))
-            });
-
-            // Populate table
-            chargers.forEach(charger => {
+            for (let i = 0; i < chargersWithDistances.length; i++) {
+                const { charger, lon, lat } = chargersWithDistances[i];
                 const { site_name, postcode, charger_type, socket_type } = charger.attributes;
                 const chargerTableRow = document.createElement("tr");
                 chargerTableRow.innerHTML = `
@@ -158,10 +142,26 @@
                     <td>${postcode}</td>
                     <td>${charger_type}</td>
                     <td>${socket_type}</td>
-                    <td>${charger.distance.toFixed(2)}</td>
+                    <td>${convertToMiles(chargersWithDistances[i].distance).toFixed(2)}</td>
                 `;
                 chargerTableBody.appendChild(chargerTableRow);
-            });
+                addChargerMarker({ charger, lon, lat });
+            }
+        }
+
+        // Function to convert kilometers to miles
+        function convertToMiles(kilometers) {
+            return kilometers * 0.621371;
+        }
+
+        // Function to add a marker for a charger
+        function addChargerMarker(charger) {
+            const { attributes: { site_name, postcode } } = charger.charger;
+            const location = `${site_name}<br>${postcode}`;
+            new mapboxgl.Marker({ color: "red" })
+                .setLngLat([charger.lon, charger.lat])
+                .setPopup(new mapboxgl.Popup().setHTML(location))
+                .addTo(map);
         }
 
         // Function to calculate distance between two coordinates using Haversine formula
@@ -189,28 +189,6 @@
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-2.587910, 51.454514],
             zoom: 11
-        });
-
-        // Add charger data source to the map
-        map.on('load', function() {
-            map.addSource('chargers', {
-                type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: []
-                }
-            });
-
-            // Add charger layer to the map
-            map.addLayer({
-                id: 'chargers',
-                type: 'symbol',
-                source: 'chargers',
-                layout: {
-                    'icon-image': 'car-15',
-                    'icon-allow-overlap': true
-                }
-            });
         });
     </script>
 </body>
