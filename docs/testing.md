@@ -7,6 +7,8 @@ Test Runs
 TODO: For each test described above, indicate the current status. 
 Create a requirements traceability matrix to validate the completeness of the product.
 
+## Requirements
+
 | Use-Case ID | Requirement ID | Test Case | Status |
 | ----------- | -------------- | --------- | ------ |
 | Use Case 1 | FR1.1 | The system should allow the user to find the nearest charger - The System does this perfectly | Pass|
@@ -24,4 +26,13 @@ Create a requirements traceability matrix to validate the completeness of the pr
 | Use Case 2 | NFR2.3 | The map should default view to bristol if no location data is available (Reliability). | Pass | 
 | Use Case 3 | NFR3.1 | The data used by the app should be up to date; Less than one year old (Functional Suitability). | To be tested |
 
+## Tests
+
+| Test Case | Description               | Testing Approach            | Prerequisites     | Test Data               |
+|-----------|---------------------------|-----------------------------|-------------------|-------------------------|
+| UC1 - FR1.1 | The system should allow the user to find the nearest charger.                                                         | Manual testing with real user scenarios                            | Access to the application, a browser with geolocation support | Testers' actual location coordinates                  |
+| UC1 - FR1.2 | The system should add markers for each charger on the map.                                                             | Automated unit testing                                              | Unit testing framework set up, map rendering functionality implemented | Mock charger data with known coordinates             |
+| UC1 - FR1.3 | The system should get permission to access user location via geolocation object.                                       | Manual testing                                                       | Access to the application, a browser with geolocation support | N/A (User interaction)                               |
+| UC1 - FR1.4 | The system must query the database to get the charger coordinates.                                                     | Automated unit testing combined with integration testing            | Access to the database, database connection established | Mock charger data stored in the database             |
+| UC2 - FR2.1 | The system should allow the user to find and filter chargers based on their type using UC2.                            | Manual testing with real user scenarios                            | Access to the application, filtering functionality implemented | Testers' actual location coordinates, mock charger data |
 
