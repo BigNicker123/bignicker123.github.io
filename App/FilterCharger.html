@@ -94,14 +94,17 @@
 
                 const chargerTypeFilter = document.getElementById('charger-type').value;
                 const socketTypeFilter = document.getElementById('socket-type').value;
-                const distanceFilter = parseFloat(document.getElementById('distance').value) || Infinity;
+                let distanceFilter = parseFloat(document.getElementById('distance').value) || Infinity;
+
+                // Convert distance to kilometers
+                distanceFilter = milesToKilometers(distanceFilter);
 
                 let filteredChargers = chargerData.features;
 
                 if (chargerTypeFilter) {
                     filteredChargers = filteredChargers.filter(charger => charger.attributes.charger_type === chargerTypeFilter);
                 }
-                
+
                 if (socketTypeFilter) {
                     filteredChargers = filteredChargers.filter(charger => charger.attributes.socket_type === socketTypeFilter);
                 }
@@ -120,6 +123,7 @@
 
                 displayChargers(filteredChargers);
             }
+
 
 
             function clearChargerMarkers() {
@@ -216,6 +220,11 @@
             function convertToMiles(kilometers) {
                 return kilometers * 0.621371;
             }
+
+            function milesToKilometers(miles) {
+                return miles * 1.60934;
+            }
+
 
             getUserLocation();
         });
