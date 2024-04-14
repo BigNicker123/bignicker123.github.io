@@ -73,7 +73,6 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Initialize Mapbox
             mapboxgl.accessToken = 'pk.eyJ1IjoiYmlnbmlja2VyIiwiYSI6ImNsc3NzcTFtNjBld3cycXBnNWZqbGQ0aXAifQ.1wf_L1NCQ2en-cXYyLAdDQ';
             map = new mapboxgl.Map({
                 container: 'map',
@@ -82,21 +81,84 @@
                 zoom: 11
             });
 
-            // Global variables
             let userLocation = null;
+            let chargerData = null;
 
-            // Function to fetch charger data from API
+            function applyFilters() {
+                const chargerTypeFilter = document.getElementById('charger-type').value;
+                const socketTypeFilter = document.getElementById('socket-type').value;
+                const distanceFilter = parseFloat(document.getElementById('distance').value) || Infinity;
+
+                let filteredChargers = chargerData.features;
+
+                if (chargerTypeFilter) {
+                    filteredChargers = filteredChargers.filter(charger => charger.attributes.charger_type === chargerTypeFilter);
+                }
+                
+                if (socketTypeFilter) {
+                    filteredChargers = filteredChargers.filter(charger => charger.attributes.socket_type === socketTypeFilter);
+                }
+
+                filteredChargers = filteredChargers.filter(charger => {
+                    const distance = getDistance(userLocation.latitude, userLocation.longitude, charger.attributes.location_1_Y, charger.attributes.location_1_X);
+                    return distance <= distanceFilter;
+                });
+
+                filteredChargers.sort((a, b) => {
+                    const distanceA = getDistance(userLocation.latitude, userLocation.longitude, a.attributes.location_1_Y, a.attributes.location_1_X);
+                    const distanceB = getDistance(userLocation.latitude, userLocation.longitude, b.attributes.location_1_Y, b.attributes.location_1_X);
+                    return distanceA - distanceB;
+                });
+
+                displayChargers(filteredChargers);
+            }
+
+            function convertToMiles(kilometers) {
+                return kilometers * 0.621371;
+            }
+
+
+            function displayChargers(chargers) {
+                const chargerInfoContainer = document.getElementById("charger-info");
+                const chargerTableBody = chargerInfoContainer.querySelector(".charger-table-body");
+                const resultTitle = chargerInfoContainer.querySelector("#result-title");
+
+                resultTitle.textContent = `Showing ${chargers.length} results`;
+                chargerTableBody.innerHTML = "";
+
+                chargers.forEach(charger => {
+                    const { site_name, postcode, charger_type, socket_type } = charger.attributes;
+                    const distance = getDistance(userLocation.latitude, userLocation.longitude, charger.attributes.location_1_Y, charger.attributes.location_1_X);
+
+                    const chargerTableRow = document.createElement("tr");
+                    chargerTableRow.innerHTML = `
+                        <td>${site_name}</td>
+                        <td>${postcode}</td>
+                        <td>${charger_type}</td>
+                        <td>${socket_type}</td>
+                        <td>${convertToMiles(distance).toFixed(2)}</td>
+                    `;
+                    chargerTableBody.appendChild(chargerTableRow);
+                    addChargerMarker(charger.attributes.location_1_Y, charger.attributes.location_1_X, site_name, postcode);
+                });
+            }
+
+
+            document.getElementById("apply-filters").addEventListener("click", applyFilters);
+
             function fetchChargerData() {
                 if (!userLocation) return;
                 const { latitude: userLat, longitude: userLon } = userLocation;
                 const url = `https://services2.arcgis.com/a4vR8lmmksFixzmB/arcgis/rest/services/Electric_Vehicle_Charging_Points/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json&lat=${userLat}&lon=${userLon}`;
                 fetch(url)
                 .then(response => response.json())
-                .then(sortChargerDataByDistance)
+                .then(data => {
+                    chargerData = data;
+                    applyFilters();
+                })
                 .catch(error => console.error('Error fetching charger data:', error));
             }
 
-            // Function to get user's geolocation
             function getUserLocation() {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
@@ -113,7 +175,6 @@
                 }
             }
 
-            // Function to add a marker for user's location
             function addUserMarker(lat, lon) {
                 new mapboxgl.Marker({ color: "blue" })
                     .setLngLat([lon, lat])
@@ -121,59 +182,14 @@
                     .addTo(map);
             }
 
-            // Function to sort charger data by distance from user's location
-            function sortChargerDataByDistance(data) {
-                if (!userLocation) return;
-                const userLat = userLocation.latitude;
-                const userLon = userLocation.longitude;
-
-                const chargersWithDistances = data.features.map(charger => {
-                    const { attributes: { location_1_Y: chargerLat, location_1_X: chargerLon } } = charger;
-                    const distance = getDistance(userLat, userLon, chargerLat, chargerLon);
-                    return { charger, distance, lat: chargerLat, lon: chargerLon };
-                });
-
-                chargersWithDistances.sort((a, b) => a.distance - b.distance);
-
-                const furthestDistance = chargersWithDistances[chargersWithDistances.length - 1].distance;
-
-                const chargerInfoContainer = document.getElementById("charger-info");
-                const chargerTableBody = chargerInfoContainer.querySelector(".charger-table-body");
-                const resultTitle = chargerInfoContainer.querySelector("#result-title");
-                resultTitle.textContent = `Showing ${chargersWithDistances.length} results in ${convertToMiles(furthestDistance).toFixed(2)} miles`;
-                chargerTableBody.innerHTML = "";
-                for (let i = 0; i < chargersWithDistances.length; i++) {
-                    const { charger, lon, lat } = chargersWithDistances[i];
-                    const { site_name, postcode, charger_type, socket_type } = charger.attributes;
-                    const chargerTableRow = document.createElement("tr");
-                    chargerTableRow.innerHTML = `
-                        <td>${site_name}</td>
-                        <td>${postcode}</td>
-                        <td>${charger_type}</td>
-                        <td>${socket_type}</td>
-                        <td>${convertToMiles(chargersWithDistances[i].distance).toFixed(2)}</td>
-                    `;
-                    chargerTableBody.appendChild(chargerTableRow);
-                    addChargerMarker({ charger, lon, lat });
-                }
-            }
-
-            // Function to convert kilometers to miles
-            function convertToMiles(kilometers) {
-                return kilometers * 0.621371;
-            }
-
-            // Function to add a marker for a charger
-            function addChargerMarker(charger) {
-                const { attributes: { site_name, postcode } } = charger.charger;
-                const location = `${site_name}<br>${postcode}`;
+            function addChargerMarker(lat, lon, siteName, postcode) {
+                const location = `${siteName}<br>${postcode}`;
                 new mapboxgl.Marker({ color: "red" })
-                    .setLngLat([charger.lon, charger.lat])
+                    .setLngLat([lon, lat])
                     .setPopup(new mapboxgl.Popup().setHTML(location))
                     .addTo(map);
             }
 
-            // Function to calculate distance between two coordinates using Haversine formula
             function getDistance(lat1, lon1, lat2, lon2) {
                 const R = 6371;
                 const dLat = deg2rad(lat2 - lat1);
@@ -183,12 +199,10 @@
                 return R * c;
             }
 
-            // Function to convert degrees to radians
             function deg2rad(deg) {
                 return deg * (Math.PI / 180);
             }
 
-            // Call getUserLocation when the page loads
             getUserLocation();
         });
     </script>
