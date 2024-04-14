@@ -49,3 +49,7 @@ TODO: Repeat as necessary
 
 ![UML - Find Nearest Charger](Images/UMLForUseCase1.png)
 
+### UML Diagram for Use Case 2 (Filter Chargers)
+
+### UML Diagram for Use Case 3 (Provide Directions)
+
