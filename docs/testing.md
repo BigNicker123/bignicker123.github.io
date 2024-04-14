@@ -1,7 +1,7 @@
 # Testing
 
 ## Test Plan
-TODO: Describe any manual and automated (unit) tests. Uniquely identify each test case. Include prerequisites and test data.
+Testing for the Car Charger Finder application will utilise both manual and automated approaches to ensure comprehensive coverage. Manual testing will involve real user scenarios to validate features like finding the nearest charger and filtering based on type. Automated testing will focus on unit tests for specific functions and integration tests to ensure seamless component interaction. Performance, compatibility, and security testing will also be conducted to assess efficiency, cross-device functionality, and system robustness. This combination of testing methodologies aims to ensure that the application meets all functional and non-functional requirements, providing users with a reliable and user-friendly experience.
 
 ## Test Runs (Requirements)
 
