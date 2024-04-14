@@ -50,10 +50,13 @@ TODO: Document each query to Bristol Open Data
 
 ### UML Diagram for Use Case 1 (Find Nearest Charger)
 
+The code makes two requests to the Bristol Open Data API. First, in the `fetchChargerData()` function, it retrieves charging point data based on the user's location. Then, within `sortChargerDataByDistance()`, it calculates distances between each charger and the user, sorting and displaying the nearest ones. These queries ensure up-to-date information on nearby charging stations.
+
 ![UML - Find Nearest Charger](Images/UMLForUseCase1.png)
 
 ### UML Diagram for Use Case 2 (Filter Chargers)
-TODO: UML Diagram for use case 2
+
+The code sends two requests to the Bristol Open Data API. Firstly, in the `fetchChargerData()` function, it retrieves charging point data based on the user's geolocation. Then, within `applyFilters()`, it filters the chargers based on user-defined criteria and displays the nearest ones on the map and in the table. These queries ensure that users receive accurate and relevant information about nearby charging stations.
 
 ### UML Diagram for Use Case 3 (Provide Directions)
 TODO: UML Diagram for use case 3
