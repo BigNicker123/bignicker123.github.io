@@ -1,6 +1,7 @@
 # Implementation
 
 ## Introduction
+TODO: Edit this paragraph so it includes information about every use case
 This web app utilises both the Mapbox API and Bristol Open Data API to pinpoint nearby electric vehicle charging stations. By leveraging the user's geolocation, it organises and presents charger details in a table format, featuring name, location, type, socket type, and distance. 
 
 The dataset, obtained from the Bristol Open Data API, offers information on electric vehicle charging points, encompassing attributes such as name, location coordinates, charger type, and socket type. It is relatively small, containing only 26 rows. However, to streamline the user experience, various columns containing unnecessary information for the web app's purpose have been filtered out.
@@ -35,8 +36,9 @@ provide a table listing the number of jslint warnings/reports for each module.
     └── readme.md
 ```
 ## Software Architecture
+TODO: Edit the folowing paragraph and update it with every use case
 The architecture of this web application revolves around a client-server model, where the client-side interface, built with HTML, CSS, and JavaScript, interacts with the server-side Bristol Open Data API to fetch information about electric vehicle charging points. Utilising the Mapbox API, the application integrates interactive maps into the interface. JavaScript functions handle geolocation retrieval from the browser, enabling the user's location to be used for fetching nearby charging points and centring the map view. Upon receiving data from the API, further JavaScript functions process and sort the information, displaying relevant details such as charger name, location, type, socket type, and distance from the user. This architecture embodies a modular approach, with distinct components managing frontend rendering, data fetching, geolocation handling, data processing, and dynamic content updates.
-
+TODO: Component diagram
 ![Insert your component Diagram here](images/component.png)
 
 ## Bristol Open Data API
@@ -50,6 +52,8 @@ TODO: Repeat as necessary
 ![UML - Find Nearest Charger](Images/UMLForUseCase1.png)
 
 ### UML Diagram for Use Case 2 (Filter Chargers)
+TODO: UML Diagram for use case 2
 
 ### UML Diagram for Use Case 3 (Provide Directions)
+TODO: UML Diagram for use case 3
 
