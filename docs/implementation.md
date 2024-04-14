@@ -1,13 +1,12 @@
 # Implementation
 
 ## Introduction
-TODO: Edit this paragraph so it includes information about every use case
 
-FindNearestCharger.hmtl utilises both the Mapbox API and Bristol Open Data API to pinpoint nearby electric vehicle charging stations. By leveraging the user's geolocation, it organises and presents charger details in a table format, featuring name, location, type, socket type, and distance. 
+'FindNearestCharger.hmtl' utilises both the Mapbox API and Bristol Open Data API to pinpoint nearby electric vehicle charging stations. By leveraging the user's geolocation, it organises and presents charger details in a table format, featuring name, location, type, socket type, and distance. 
 
 The dataset, obtained from the Bristol Open Data API, offers information on electric vehicle charging points, encompassing attributes such as name, location coordinates, charger type, and socket type. It is relatively small, containing only 26 rows. However, to streamline the user experience, various columns containing unnecessary information for the web app's purpose have been filtered out.
 
-FilterCharger.html extends the capabilities of `FindNearestCharger.html` by integrating filtering mechanisms for electric vehicle charging stations. Users can now specify charger type, socket type, and distance filters to refine their search criteria. Upon applying these filters, the code dynamically sorts the charging stations based on their proximity to the user's location and displays the filtered results both on the map and in a table format. This sorting process involves calculating the distance between each charging station and the user's location, followed by sorting the stations in ascending order based on this distance metric. Finally, the sorted charging stations are presented to the user, providing a more tailored and efficient means of discovering nearby charging options.
+'FilterCharger.html' extends the capabilities of `FindNearestCharger.html` by integrating filtering mechanisms for electric vehicle charging stations. Users can now specify charger type, socket type, and distance filters to refine their search criteria. Upon applying these filters, the code dynamically sorts the charging stations based on their proximity to the user's location and displays the filtered results both on the map and in a table format. This sorting process involves calculating the distance between each charging station and the user's location, followed by sorting the stations in ascending order based on this distance metric. Finally, the sorted charging stations are presented to the user, providing a more tailored and efficient means of discovering nearby charging options.
 
 Configuration data includes the API endpoint URL for charger data retrieval and the Mapbox access token for map rendering.
 
@@ -47,9 +46,6 @@ TODO: Component diagram
 
 ## Bristol Open Data API
 TODO: Document each query to Bristol Open Data
-
-![UML Class diagrams representing JSON query results](images/class1.png)
-TODO: Repeat as necessary
 
 ### UML Diagram for Use Case 1 (Find Nearest Charger)
 
