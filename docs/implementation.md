@@ -1,8 +1,11 @@
 # Implementation
 
 ## Introduction
-TODO: Describe the system implemented (Describe the dataset. Are there any known issues? Describe any configuration data).
-This dataset is very small with only 26 rows. This dataset provides valuable insights into the electric vehicle charging infrastructure in Bristol
+This web app utilises both the Mapbox API and Bristol Open Data API to pinpoint nearby electric vehicle charging stations. By leveraging the user's geolocation, it organises and presents charger details in a table format, featuring name, location, type, socket type, and distance. 
+
+The dataset, obtained from the Bristol Open Data API, offers information on electric vehicle charging points, encompassing attributes such as name, location coordinates, charger type, and socket type. It is relatively small, containing only 26 rows. However, to streamline the user experience, various columns containing unnecessary information for the web app's purpose have been filtered out.
+
+Configuration data includes the API endpoint URL for charger data retrieval and the Mapbox access token for map rendering.
 
 ## Project Structure
 TODO: Provide an outline of the project folder structure and the role of each file within it.
