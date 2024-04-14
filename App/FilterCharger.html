@@ -106,6 +106,7 @@
                     filteredChargers = filteredChargers.filter(charger => charger.attributes.socket_type === socketTypeFilter);
                 }
 
+                // Filter out chargers beyond the specified distance
                 filteredChargers = filteredChargers.filter(charger => {
                     const distance = getDistance(userLocation.latitude, userLocation.longitude, charger.attributes.location_1_Y, charger.attributes.location_1_X);
                     return distance <= distanceFilter;
@@ -119,6 +120,7 @@
 
                 displayChargers(filteredChargers);
             }
+
 
             function clearChargerMarkers() {
                 // Remove all charger markers from the map
