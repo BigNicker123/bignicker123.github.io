@@ -1,37 +1,39 @@
-<html>
-    <!-- By Nick LeMasonry -->
-    <head>
-        <title> Car Charger Finder </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="grid-container">
-            <header class="grey padded">
-                <span id="login">
-                    <button>
-                        Login / Sign up
-                        <i class="fa fa-user"></i>
-                    </button>
-                </span>
-                <span id="search">
-                    <input  placeholder="Search...">
-                    <i class="fa fa-search"></i>
-                </span>
-                <div class="w3-monospace">
-                    <h1> <b>Car Charger Finder</b> </h1>
-                </div>
-            </header>
-            <style>
-                body {
-                    background-image: url('Charging.jpeg');
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    background-size: cover;
-                }
-            </style>
-            <a href="FilterCharger.html" class="w3-button w3-xxlarge w3-black">Enter Now</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Charger Finder</title>
+    <!-- Link to the updated CSS file -->
+    <link rel="stylesheet" href="FindNearestChargerStyle.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header Section -->
+        <header class="header">
+            <span id="login"><button>Login / Sign up</button></span>
+            <h1>Car Charger Finder</h1>
+            <span id="search"><input type="text" placeholder="Search..."></span>
+        </header>
+
+        <!-- Navigation Section -->
+        <nav class="nav">
+            <!-- Navigation Links -->
+            <a href="FindNearestCharger.html">Find Nearest Charger</a>
+            <a href="FilterCharger.html">Filter Chargers</a>
+            <a href="ProvideDirections.html">Provide Directions</a>
+        </nav>
+
+        <!-- Button Section -->
+        <div class="enter-button">
+            <button onclick="redirectToNearestCharger()">Enter</button>
         </div>
-    </body>
+    </div>
+
+    <script>
+        function redirectToNearestCharger() {
+            window.location.href = "FindNearestCharger.html";
+        }
+    </script>
+</body>
 </html>
