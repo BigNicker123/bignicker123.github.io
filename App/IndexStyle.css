@@ -1,0 +1,126 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 auto; /* Center the title */
+}
+
+#login {
+    float: left;
+}
+
+#search {
+    float: right;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content Styles */
+.main {
+    padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Additional Styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust column sizes as needed */
+    grid-template-areas:
+        'header header'
+        'nav nav'
+        'Button Button';
+}
+
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.Button {
+    grid-area: Button; /* Assign grid area to the Button section */
+}
+
+/* Result Title Styles */
+#result-title {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Charger Table Styles */
+.charger-table {
+    width: 100%; /* Set width to 100% */
+    border-collapse: collapse;
+}
+
+.charger-table th, .charger-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.charger-table th {
+    background-color: #f2f2f2;
+}
+
+/* Charger Grid Styles */
+.charger-grid {
+    overflow-x: auto;
+}
+
+/* Map Styles */
+#map {
+    height: 80vh; /* Adjust the height as needed */
+    width: 100%; /* Fill the available space */
+}
+
+/* Enter Button Styles */
+.enter-button {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Make the button fill the height of the grid cell */
+}
+
+.enter-button button {
+    padding: 15px 30px; /* Increase padding for a bigger button */
+    font-size: 18px; /* Increase font size */
+    cursor: pointer;
+}
