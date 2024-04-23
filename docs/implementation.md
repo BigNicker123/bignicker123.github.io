@@ -53,6 +53,8 @@ The architecture of this web application revolves around a client-server model, 
 `FilterCharger.html` sends two requests to the Bristol Open Data API. Firstly, in the `fetchChargerData()` function, it retrieves charging point data based on the user's geolocation. Then, within `applyFilters()`, it filters the chargers based on user-defined criteria and displays the nearest ones on the map and in the table. These queries ensure that users receive accurate and relevant information about nearby charging stations.
 
 ### UML Diagram
+One Location can have many Chargers.
+
 ![UML Diagram](Images/UMLForUseCase1.png)
 
 ## Issues and Solutions
