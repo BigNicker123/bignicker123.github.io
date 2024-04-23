@@ -13,7 +13,7 @@ Testing for the Car Charger Finder application will utilise both manual and auto
 | Use Case 1 | FR1.4 | The system must query the database to get the charger coordinates. | Pass |
 | Use Case 2 | FR2.1 | The system should allow the user to find and filter chargers based on their type using UC2. - The system does this and filters on the socket type and distance from the user | Pass |
 | Use Case 3 | FR3.1 | The system should provide the user with directions to the charger using UC3. | Fail - UC3 has not yet been added to the project |
-| Use Case 1 | NFR1.1 | The app should work on mobile (Portability). | To be tested |
+| Use Case 1 | NFR1.1 | The app should work on mobile (Portability). | Pass - iPhone |
 | Use Case 1 | NFR1.2 | The app should display up to 5 of the closest chargers at a time (Usability). | Pass |
 | Use Case 1 | NFR1.3 | There is no security required (Security). | Can't be tested |
 | Use Case 1 | NFR1.4 | The source code should be accessable from GitHub (Maintainability). | Pass |
