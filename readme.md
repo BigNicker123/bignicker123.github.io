@@ -10,3 +10,4 @@ filter the chargers by speed, tarrif, power output and other useful filters.
 5. [Testing](docs/testing.md)
 6. [Deployment](docs/deployment.md)
 7. [Dataset](https://opendata.bristol.gov.uk/datasets/bcc::electric-vehicle-charging-points-2/explore?location=51.652907%2C-2.302821%2C9.71&showTable=true)
+8. [App](https://bignicker123.github.io/App/Index.html)
