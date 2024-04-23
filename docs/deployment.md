@@ -8,11 +8,12 @@ Version 1.0.1 - The current system supports the functionality of the splash page
 # User guide
 
 ### Use Case 1
-Use case 1 works automatically with very little user input. To make use case 1 function, the user may need to allow the program to use their location as illustrated in the image below
+Use case 1 works automatically with very little user input. To make use case 1 function, the user may need to allow the program to use their location as illustrated in the image below.
 
 ![Allow Location Image](Images/AllowLocation.png)
 
-Once the app has access to the user's location it will populate the map and results table with the closest five chargers as illustrated in the image below
+Once the app has access to the user's location it will populate the map and results table with the closest five chargers as illustrated in the screen show of use case 1 below.
+
 ![Use Case 1](Images/UC1Final.png)
 
 ### Use Case 2
