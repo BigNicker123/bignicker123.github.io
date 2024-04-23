@@ -8,5 +8,14 @@ Version 1.0.1 - The current system supports the functionality of the splash page
 # User guide
 TODO: Explain how each use-case works by providing step-by-step screenshots for each use-case. This should be based on a tested scenario.
 
+### Use Case 1
+Use case 1 works automatically with very little user input. 
+
+
+### Use Case 2
+
+
+### USe Case 3
+
 ![Insert screenshots here](images/screenshot.png)
 TODO: Repeat as necessary
