@@ -58,7 +58,7 @@ One Location can have many Chargers.
 
 ![UML Diagram](Images/UMLUC1.png)
 
-## Issues and Solutions
+## Linting
 
 This table shows the issues and solutions that occured during the implementation phase for this web app
 
