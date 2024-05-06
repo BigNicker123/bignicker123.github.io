@@ -55,7 +55,7 @@ The architecture of this web application revolves around a client-server model, 
 ### UML Diagram
 One Location can have many Chargers.
 
-![UML Diagram](Images/UMLForUseCase1.png)
+![UML Diagram](Images/UMLUC1.png)
 
 ## Issues and Solutions
 
