@@ -63,8 +63,16 @@ One Location can have many Chargers.
 This table shows the issues that occured during the implementation phase for this web app.
 | Use Case | Description              |
 |----------|--------------------------|
-| UC1 | |
-| UC2 | |
+| UC1 | 'fetch' is not defined |
+| UC1 | 'console' is not defined |
+| UC1 | 'mapboxgl' is not defined |
+| UC2 | 'navigator' is not defined |
+| UC2 | 'document' is not defined |
+| UC2 | 'window' is not defined |
+| UC3 | |
+
+
+
 
 
 
