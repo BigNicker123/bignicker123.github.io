@@ -60,7 +60,12 @@ One Location can have many Chargers.
 
 ## Linting
 
-This table shows the issues and solutions that occured during the implementation phase for this web app
+This table shows the issues that occured during the implementation phase for this web app.
+| Use Case | Description              |
+|----------|--------------------------|
+| UC1 | |
+| UC2 | |
+
 
 
 
