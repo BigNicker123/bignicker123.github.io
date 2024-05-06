@@ -22,6 +22,7 @@ In the "App" directory of the project, we have several files dedicated to facili
         └── FindNearestCharger.html
         └── FindNearestChargerStyle.css
         └── Index.html
+        └── IndexStyle.css
         └── ProvideDirections.html
         └── ProvideDirectionsStyle.css
     └── 📁docs
